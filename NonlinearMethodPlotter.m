@@ -69,10 +69,10 @@ plot(d_Exact, NX,  'k.', 'MarkerSize', 15, 'DisplayName', 'Exact')
 hold on
 
 plot(d_NR_ls, N_NR_ls, '.-', 'DisplayName', 'N-R LS', 'LineWidth',1.5,...
-    'Color',[0 0.4470 0.7410])
+    'Color',[0 0.4470 0.7410], 'MarkerSize',50)
 %
 plot(d_NR_nls, N_NR_nls, 'o--', 'DisplayName', 'N-R no LS', 'LineWidth',1.5,...
-    'Color',[0.8500 0.3250 0.0980])
+    'Color',[0.8500 0.3250 0.0980], 'MarkerSize',10)
 
 plot(d_MNR_ls, N_MNR_ls, '*-', 'DisplayName', 'MN-R LS', 'LineWidth',1.5,...
     'Color',[0.9290 0.6940 0.1250])
@@ -93,7 +93,7 @@ legend('FontSize', 15)
 subplot(1,2,2)
 
 semilogy(d_NR_ls, abs(N_NR_ls - NX)./abs(NX), '.', 'DisplayName', 'N-R LS','MarkerSize', 10,...
-    'Color',[0 0.4470 0.7410], 'LineWidth', 1.5)
+    'Color',[0 0.4470 0.7410], 'LineWidth', 1.5, 'MarkerSize', 50)
 hold on
 semilogy(d_NR_nls, abs(N_NR_nls - NX)./abs(NX), 'o', 'DisplayName', 'N-R no LS','MarkerSize', 10,...
     'Color',[0.8500 0.3250 0.0980], 'LineWidth', 1.5)
@@ -110,7 +110,7 @@ semilogy(d_BFGS_nls, abs(N_BFGS_nls-NX)./abs(NX), '^', 'DisplayName', 'BFGS no L
 grid on
 title(sprintf('Relative Error x = %i', x))
 xlabel('d')
-ylabel('Relative Error')
+ylabel('Relative Error in N(d)')
 
 sgtitle(sprintf('x = %i', x))
 
@@ -119,10 +119,10 @@ figure(Name='Convergence')
 
 
 plot(Fi, i_NR_ls, '.-', 'DisplayName', 'N-R LS', 'LineWidth',1.5,...
-    'Color',[0 0.4470 0.7410])
+    'Color',[0 0.4470 0.7410], 'MarkerSize',50)
 hold on
 plot(Fi, i_NR_nls, 'o--', 'DisplayName', 'N-R no LS', 'LineWidth',1.5,...
-    'Color',[0.8500 0.3250 0.0980])
+    'Color',[0.8500 0.3250 0.0980],'MarkerSize',10)
 
 plot(Fi, i_MNR_ls, '*-', 'DisplayName', 'MN-R LS', 'LineWidth',1.5,...
     'Color',[0.9290 0.6940 0.1250])
