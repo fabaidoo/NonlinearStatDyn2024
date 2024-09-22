@@ -34,7 +34,8 @@ resF = resF(1);
 
 if i == maxiter
 disp(['Did not converge. Last value is %f ', num2str(diOld(1))])
-di = diNew(1);
+di = real(diNew(1));
+iCon = i;
 end
 
 

@@ -49,7 +49,7 @@ if LSflag == false %no line search
 
     if i == maxiter
         %disp(['Did not converge. Last value is  ', num2str(diOld(1))])
-        di = 0;
+        di = real(diNew(1));
         iCon = i;
     end
     resF = residual(Fi, diNew, x);
@@ -96,6 +96,7 @@ else %with line search
     if i == maxiter
         disp(['Did not converge. Last value is  ', num2str(diOld(1))])
         di = diNew(1);
+        iCon = i;
     end
     resF = residual(Fi, diNew, x);
     resF = resF(1);
@@ -157,6 +158,10 @@ end
             else
                 sOld = sNew;
             end
+        end
+
+        if j == lineMaxiter
+            si = sNew;
         end
     end
 

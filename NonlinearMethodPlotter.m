@@ -136,6 +136,7 @@ plot(Fi, i_BFGS_nls, '^--', 'DisplayName', 'BFGS no LS', 'LineWidth',1.5,...
 title(sprintf('Number of iterations vs load step, x = %i', x))
 legend('FontSize', 15)
 grid on
+xlabel('F_i')
 
 
     function Nd = NFunc(di)
