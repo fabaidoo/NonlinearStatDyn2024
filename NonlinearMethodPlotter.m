@@ -140,8 +140,9 @@ xlabel('F_i')
 
 
     function Nd = NFunc(di)
-        p = [0.5, -5, (x+Fi), -10*Fi];
-        Nd  = polyval(p, di);
+        %p = [0.5, -5, (x+Fi), -10*Fi];
+        %Nd  = polyval(p, di);
+        Nd = x * di./(10 - di) - 0.5 * di.^2;
 
        
 
